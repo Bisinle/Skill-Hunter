@@ -1,27 +1,10 @@
 import React from "react";
-
+import Job from "./Job";
 function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
-        reiciendis pariatur porro doloremque molestias et est eos quas rerum
-        voluptatem, nobis perspiciatis nemo praesentium voluptate impedit
-        voluptates qui consequatur molestiae!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
-        reiciendis pariatur porro doloremque molestias et est eos quas rerum
-        voluptatem, nobis perspiciatis nemo praesentium voluptate impedit
-        voluptates qui consequatur molestiae!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
-        reiciendis pariatur porro doloremque molestias et est eos quas rerum
-        voluptatem, nobis perspiciatis nemo praesentium voluptate impedit
-        voluptates qui consequatur molestiae!
-      </p>
+      <Job/>
     </div>
   );
 }
