@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { dataContext } from '../data/DataContextProvider'
 
 function Job() {
-  const value = useContext(dataContext)
-  console.log(value)
+  const { careerData } = useContext(dataContext)
+  console.log(careerData)
 
   return (
     <div className="flex justify-center">
