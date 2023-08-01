@@ -73,7 +73,7 @@ function handleSearch(event) {
 
     <div className='grid grid-cols-2 justify-center'>
 <div>
-<section class="py-24 lg:pb-36 bg-gray-100 overflow-hidden">
+<section class="py-10 lg:pb-20 bg-gray-100 overflow-hidden">
   <div class="container px-4 mx-auto">
      {/* Form input for getting the 'searchTerm' */}
     <form>
@@ -87,6 +87,7 @@ function handleSearch(event) {
                   <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="  Search Job" value={searchTerm} onChange={handleSearch} required />
               </div>
     </form>
+    <br></br>
       {/* Condition to display the searched careerData that matches the searchTerm, or display "No Result Found" if there are no matches */}
       {searchedData.length === 0 ? (
                   <p className="text-red-600">No Result Found</p>
