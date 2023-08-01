@@ -6,7 +6,7 @@ function DataContextProvider({ children }) {
   const [careerData, setCareerData] = useState([]);
 
   useEffect(() => {
-    fetch(`  http://localhost:8000/careers`)
+    fetch(`  http://localhost:4000/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data));
   }, []);

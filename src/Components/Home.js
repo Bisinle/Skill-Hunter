@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   return (
-    <div>
+    <div className="home-layout">
       <h1>Home</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
