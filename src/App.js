@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./index.css";
 //context
 import { useContext, useState } from "react";
 import { dataContext } from "./data/DataContextProvider";
