@@ -35,9 +35,9 @@ function Card({ career, onButtonClick }) {
               <div className="w-auto p-2">
                 <div className="flex flex-row justify-center">
                   <Link
+                    to="/"
                     onClick={() => detailsHandle(career.id)}
                     className="inline-block mx-auto px-4 py-2 text-white font-semibold tracking-tight bg-indigo-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
-                    href="#"
                   >
                     Check Details
                   </Link>

@@ -28,8 +28,6 @@ function Home() {
   return (
     <>
       <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
         <div className="grid grid-cols-2 justify-center">
           <div>
             <section class="py-24 lg:pb-36 bg-gray-100 overflow-hidden">
