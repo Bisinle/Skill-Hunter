@@ -66,25 +66,19 @@ function Home() {
 <div>
 <section class="py-24 lg:pb-36 bg-gray-100 overflow-hidden">
   <div class="container px-4 mx-auto">
-    
- 
-{displayCareerdata}
-
-  </div>
+ {displayCareerdata}
+</div>
 </section>
 </div>
 
 
 <div>
 <div className='max-w-1xl px-4 py-4 mx-auto '>
-
-
-
-<div class="max-w-2xl px-8 mt-4 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800" >
-  <div class="flex items-center justify-between">
-    <span class="text-sm font-light text-gray-600 dark:text-gray-400">Jan 15, 2022</span> 
-    <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">JavaScript</a>
-  </div> 
+   <div class="max-w-2xl px-8 mt-4 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800" >
+     <div class="flex items-center justify-between">
+      <span class="text-sm font-light text-gray-600 dark:text-gray-400">Jan 15, 2022</span> 
+       <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">JavaScript</a>
+     </div> 
   <div class="mt-2">
     <a href="https://stackdiary.com/" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">How to sanitiz array() in JS</a> 
     <p class="mt-2 text-gray-600 dark:text-gray-300">Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu.</p>
@@ -103,8 +97,11 @@ function Home() {
 </div>
 <div className='max-w-2xl px-8 mt-4 text-left py-4 mx-auto'>
 <p>Since its founding over 80 years ago, Krispy Kreme’s focus has remained the same - making fresh, premium quality doughnuts inspired by their founder’s original recipe. The brand’s iconic Hot Light lets guests know when doughnuts are being made fresh in shop so they can enjoy hot doughnuts fresh off the line. To make Krispy Kreme’s in-shop experience even sweeter, many shops across the globe feature the brands one-of-a-kind doughnut theatre, an immersive, interactive experience through which guests can see Krispy Kreme’s melt-in-your-mouth doughnuts being made right before their eyes.
+   To be successful in this role, you should be well-organized, have exceptional time management skills, discretion, and be able to act without guidance.</p>
 
-To be successful in this role, you should be well-organized, have exceptional time management skills, discretion, and be able to act without guidance.</p>
+<p></p>
+<
+
 
 </div>
 
