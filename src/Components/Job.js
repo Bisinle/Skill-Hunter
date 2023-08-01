@@ -3,15 +3,15 @@ import { dataContext } from '../data/DataContextProvider'
 
 function Job() {
   const { careerData } = useContext(dataContext)
-  console.log(careerData)
-
-  return (
-    <div className="flex justify-center">
-      <div className="border p-6 max-w-2xl rounded-lg space-y-5">
+  
+  const displayCareerData = () => {
+    return careerData.map((career) => {
+      return (
+        <div className="border p-6 max-w-2xl rounded-lg space-y-5 m-2">
           <div>
-              <h4 className="hover:underline font-bold text-xl">Picker / Packer</h4>
-              <p className="text-lg">NoGigiddy</p>
-              <p className="text-lg">Houston, TX</p>
+              <h4 className="hover:underline font-bold text-xl">{career.title}</h4>
+              <p className="text-lg">{career.company}</p>
+              <p className="text-lg">{career.location}</p>
           </div>
 
           <div>
@@ -23,6 +23,13 @@ function Job() {
               <p className="font-light mt-8">Acts Conscientiously: Demonstrates concern for quality, product integrity, and safety of one’s own and others’ work and impact to the stores.</p>
           </div>
       </div>
+      )
+    })
+  }
+
+  return (
+    <div className="flex flex-col items-center">
+      {displayCareerData()}
     </div>
   )
 }
