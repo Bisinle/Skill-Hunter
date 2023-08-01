@@ -6,7 +6,7 @@ function DataContextProvider({ children }) {
   const [careerData, setCareerData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/careers`)
+    fetch(`https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data));
   }, []);
