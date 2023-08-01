@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
 import Careers from "./Careers";
 function CareerDetails({ careerData, careerId }) {
+  const LoadRef = useRef();
+  const { isLoading } = useContext(dataContext);
   console.log(careerId);
   console.log(careerData);
   const currentCareerDetail = careerData.find(
     (Career) => Career.id === careerId
   );
-  console.log(currentCareerDetail);
+  LoadRef.current = currentCareerDetail;
 
   if (!currentCareerDetail) {
-    return <h1>LOADING...</h1>;
+    // const displyCareerOnInitialLoad = careerData[0].title;
+    // console.log(displyCareerOnInitialLoad);
+    return isLoading ? <h1>Loading....</h1> : <h1>laskjdflsdfjsdlk</h1>;
   }
   return (
     <div>
