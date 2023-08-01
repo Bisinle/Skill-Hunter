@@ -5,12 +5,11 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <header>
-        <h1>
-          SKILL <span>HUNTER</span>
-        </h1>
         <nav>
+          <h1>
+            SKILL <span>HUNTER</span>
+          </h1>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="careers">Careers</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="help">Help</NavLink>
         </nav>
