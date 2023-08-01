@@ -1,28 +1,23 @@
-import React from "react";
-import "./App.css";
-import "./index.css";
-//context
-import { useContext } from "react";
-import { dataContext } from "./data/DataContextProvider";
-//Routes
-import { Route, Routes } from "react-router-dom";
-//components
-
-import NavBar from "./Components/NavBar";
-
-import RoutingComponent from "./Components/RoutingComponent";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  const { careerData, setCareerData } = useContext(dataContext);
-  console.log(careerData);
   return (
     <div className="App">
-  <h1 className="text-3xl font-bold underline text-transparent">
-    Hello world!
-  </h1>
-
-      <NavBar />
-      <RoutingComponent />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
