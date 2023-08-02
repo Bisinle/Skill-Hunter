@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
 import NoResultsCard from "./NoResultsCard";
+import Newsletter from "./Newsletter";
 
 function Home() {
   const { careerData, setCareerData } = useContext(dataContext);
@@ -118,6 +119,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Newsletter />
 
     </>
   );
