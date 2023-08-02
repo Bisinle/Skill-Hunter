@@ -38,7 +38,7 @@ function Home() {
     );
   });
 
-  // console.log(displayCareerdata);
+  
   return (
     <>
       <div>
