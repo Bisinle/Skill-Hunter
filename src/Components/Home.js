@@ -62,7 +62,15 @@ function Home() {
     // Update the filteredData state with the result; search term, location selected, or both
     setFilteredData (filteredData)
 
+    if (leftSection && rightSection) {
+      leftSection.addEventListener("scroll", handleLeftScroll);
+    }
 
+    return () => {
+      if (leftSection) {
+        leftSection.removeEventListener("scroll", handleLeftScroll);
+      }
+    };
 
   }, [careerData, searchTerm, selectedLocation])
 
@@ -101,7 +109,7 @@ function Home() {
         <div className="grid grid-cols-2 justify-center">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
-              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "90vh" }} className="container px-4 mx-auto mb-10">
+              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "82vh" }} className="container px-4 mx-auto mb-10">
 
                 {/* Search bar and filter dropdown */}
                 <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
