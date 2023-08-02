@@ -38,7 +38,7 @@ function Home() {
     );
   });
 
-  // console.log(displayCareerdata);
+  console.log(displayCareerdata);
   return (
     <>
       <div>
