@@ -2,7 +2,6 @@ import React from "react";
 import { useContext, useState, useEffect, useRef } from "react";
 import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
-import { Route, Routes } from "react-router-dom";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
 import "./home.css"
@@ -11,9 +10,7 @@ import Newsletter from "./Newsletter";
 
 function Home() {
   const { careerData, setCareerData } = useContext(dataContext);
-  const [isDisplayed, setIsDisplayed] = useState(false);
   const [careerId, setCareerId] = useState();
-  const [isSticky, setIsSticky] = useState(false);
   const leftSectionRef = useRef(null);
   const rightSectionRef = useRef(null);
 
