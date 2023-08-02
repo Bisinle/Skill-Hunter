@@ -1,29 +1,56 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { dataContext } from "../data/DataContextProvider";
-import Filter from "./Filter";
-
-
 import Card from "./Card";
 import { Route, Routes } from "react-router-dom";
 import CareerDetails from "./CareerDetails";
+import Filter from "./Filter";
 
 function Home() {
-  // const [jobs, setJobs] = useState(carr)
   const { careerData, setCareerData } = useContext(dataContext);
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [careerId, setCareerId] = useState();
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
 
   // State to hold the search term
   const [searchTerm, setSearchTerm] = useState("")
+
   // Function to update the search term
   function handleSearch(event) {
     setSearchTerm(event.target.value)
   }
   // Filter the careerData based on the search term
-  const searchedData = careerData.filter((career) =>
+  // const searchedData = careerData.filter((career) =>
+  //   career.title.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+
+  // Function to update the selected location
+  function handleLocationFilter(filterLocation) {
+    setSelectedLocation(filterLocation);
+  }
+
+
+  // Update the filteredData when careerData, searchTerm, or selectedLocation changes
+  
+  useEffect(() => {
+
+    const searchedData = careerData.filter((career) =>
     career.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    );
+
+    let filteredData = searchedData;
+    if (selectedLocation) {
+      filteredData = searchedData.filter(
+        (career) => career.location.toLowerCase() === selectedLocation.toLocaleLowerCase()
+      )
+    }
+
+    setFilteredData (filteredData)
+
+
+  }, [careerData, searchTerm, selectedLocation])
 
 
   function getCareerIdFromCard(id) {
@@ -31,14 +58,13 @@ function Home() {
     setCareerId(id);
   }
 
-  function handleFilterChange(filteredCareers) {
-    setCareerData(filteredCareers);
-    // console.log(filteredCareers);
+  function handleFilterChange (filteredCareers) {
+    setFilteredData (filteredCareers)
   }
 
   //changed from careerData to searchedData
   // const displayCareerdata = careerData.map((career) => {
-  const displayCareerdata = searchedData.map((career) => {
+  const displayCareerdata = filteredData.map((career) => {
     return (
       <span key={career.id}>
         {" "}
@@ -50,7 +76,7 @@ function Home() {
   console.log(displayCareerdata);
   return (
     <>
-      <Filter onFilter={handleFilterChange} />
+    <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter}/>
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>
