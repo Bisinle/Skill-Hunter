@@ -7,7 +7,7 @@ function DataContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/careers`)
+    fetch(`https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data))
       .finally(setIsLoading(false));
