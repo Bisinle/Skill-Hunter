@@ -22,16 +22,18 @@ function Card({ career, onButtonClick }) {
                 <p className="text-lg">{career.company}</p>
                 <p className="text-lg">{career.location}</p>
 
-                <div>
-                  <span className="bg-gray-300 mr-3 p-2 roundend-md">
-                    Full Time: {} /
+                <div className="mt-3">
+                  <span className="bg-gray-300 mr-3 px-2.5 py-1.5 rounded-lg">
+                    {career.type}
                   </span>
-                  <span className="bg-gray-300 mr-3 p-2 roundend-md">
+                  <span className="bg-green-100 mr-3 px-2.5 py-1.5 rounded-lg">
                     {" "}
-                    Salary: {career.salary}
+                    <i class="fa fa-money-bills"></i> ${career.salary.toLocaleString()} per year
                   </span>
                 </div>
+                <p className="pt-4">{career.description}</p>
               </div>
+              
               <div className="w-auto p-2">
                 <div className="flex flex-row justify-center">
                   <Link
@@ -39,7 +41,7 @@ function Card({ career, onButtonClick }) {
                     onClick={() => detailsHandle(career.id)}
                     className="inline-block mx-auto px-4 py-2 text-white font-semibold tracking-tight bg-indigo-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
                   >
-                    Check Details
+                    View Details
                   </Link>
                 </div>
               </div>

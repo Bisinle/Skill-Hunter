@@ -38,32 +38,22 @@ function Filter({ onFilter, onLocationFilter }) {
   ];
 
   return (
-    <>
-      {/* Filter dropdown's JSX */}
-      <div className="container d-flex felx-row justify-content-center align-items-center">
-        <div className="d-flex filter">
-          <h4>Filter: </h4>
-          <div>
-            {/*onChange event to get selected location
-               value="" ensures that there is no selected option by default
-            */}
-            <select
-              onChange={handleFilter}
-              className="text-sm text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-            >
-              <option value="">Filter by location:</option>
-              {locations.map((location) => (
-                <option key={location} value={location}>
-                  {location}
-                </option>
-              ))}
-            </select>
-
-          </div>
-          
-        </div>
-      </div>
-    </>
+    <div className="filter">
+      {/*onChange event to get selected location
+          value="" ensures that there is no selected option by default
+      */}
+      <select
+        onChange={handleFilter}
+        className="text-gray-800 border border-gray-300 rounded-lg bg-gray-50"
+      >
+        <option value="">Location</option>
+        {locations.map((location) => (
+          <option key={location} value={location}>
+            {location}
+          </option>
+        ))}
+      </select>
+    </div>    
   );
 }
 
