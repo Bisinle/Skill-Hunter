@@ -10,7 +10,11 @@ function Home() {
   const { careerData, setCareerData } = useContext(dataContext);
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [careerId, setCareerId] = useState();
+
+   // State to store the selected location from the filter dropdown
   const [selectedLocation, setSelectedLocation] = useState("");
+
+  // State to store the filtered data based on both search term and location
   const [filteredData, setFilteredData] = useState([]);
 
 
@@ -21,12 +25,14 @@ function Home() {
   function handleSearch(event) {
     setSearchTerm(event.target.value)
   }
+
+  // Houstin's original code, merged with mine in useEffect
   // Filter the careerData based on the search term
   // const searchedData = careerData.filter((career) =>
   //   career.title.toLowerCase().includes(searchTerm.toLowerCase())
   // );
 
-  // Function to update the selected location
+  // Function to update the selected location based on filter dropdown selection
   function handleLocationFilter(filterLocation) {
     setSelectedLocation(filterLocation);
   }
@@ -36,17 +42,22 @@ function Home() {
   
   useEffect(() => {
 
+    // Filter the careerData based on the search term
     const searchedData = careerData.filter((career) =>
     career.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    //set filteredData to searchedData: no location is selected in this case
     let filteredData = searchedData;
+
+    // If a location is selected, further filter based on location
     if (selectedLocation) {
       filteredData = searchedData.filter(
         (career) => career.location.toLowerCase() === selectedLocation.toLocaleLowerCase()
       )
     }
 
+    // Update the filteredData state with the result; search term, location selected, or both
     setFilteredData (filteredData)
 
 
@@ -58,12 +69,12 @@ function Home() {
     setCareerId(id);
   }
 
+  // Function to handle the filter change and update filteredData
   function handleFilterChange (filteredCareers) {
     setFilteredData (filteredCareers)
   }
 
-  //changed from careerData to searchedData
-  // const displayCareerdata = careerData.map((career) => {
+  // Create JSX for displaying career cards based on the filteredData
   const displayCareerdata = filteredData.map((career) => {
     return (
       <span key={career.id}>
@@ -82,16 +93,16 @@ function Home() {
           <div>
             <section class="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
               <div class="container px-4 mx-auto">
-                {/* {displayCareerdata} */}
 
-       {/* Form input for getting the search term */}
+              {/* Form input for getting the search term */}
               <form>   
                  <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                  <div class="relative">
                     <input type="search" id="default-search" value={searchTerm} onChange={handleSearch} class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Job Title"/>
                 </div>
               </form>
-        {/* Render the filtered careers */}
+              
+              {/* Render the filtered careers */}
               {displayCareerdata.length === 0 ? (
                 <p className="text-red-600">No Result Found</p>
                 ) : (
