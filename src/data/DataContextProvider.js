@@ -7,7 +7,7 @@ function DataContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(` https://skill-hunter-server.onrender.com/careers`)
+    fetch(`https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data))
       .finally(setIsLoading(false));
@@ -19,3 +19,5 @@ function DataContextProvider({ children }) {
 
 export default DataContextProvider;
 export { dataContext };
+
+//https://skill-hunter-server.onrender.com/careers

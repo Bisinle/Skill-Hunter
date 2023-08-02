@@ -26,20 +26,20 @@ function CareerDetails({ careerData, careerId }) {
         <div className="max-w-2xl px-8 mt-4 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
           <div className="flex items-center justify-between">
             <span className="text-sm font-light text-gray-600 dark:text-gray-400">
-              Jan 15, 2022
+              {currentCareerDetail.posted}
             </span>
             <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-              JavaScript
+              {currentCareerDetail.type}
             </a>
           </div>
           <div className="mt-2">
             <a
               href="https://stackdiary.com/"
-              className="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+              className="text-2xl font-bold text-gray-900"
             >
-              How to sanitiz array() in JS
+              {currentCareerDetail.title}
             </a>
-            <p className="mt-2 text-gray-600 dark:text-gray-700">
+            <p className="mt-2 text-gray-600 font-bold dark:text-gray-700">
               {currentCareerDetail.location}
             </p>
           </div>
@@ -52,7 +52,7 @@ function CareerDetails({ careerData, careerId }) {
             </button>
             <button
               type="button"
-              className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              className="text-gray-900 bg-white border border-gray-300 "
             >
               Save
             </button>
@@ -68,8 +68,8 @@ function CareerDetails({ careerData, careerId }) {
                 alt="Author Photo"
                 className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
               />
-              <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
-                John Doe
+              <a className="font-bold text-gray-700 cursor-pointer">
+                {currentCareerDetail.company}
               </a>
             </div>
           </div>

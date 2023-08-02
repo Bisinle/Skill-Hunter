@@ -14,11 +14,11 @@ function RenderJobOnLoad() {
       <div className="mt-2">
         <a
           href="https://stackdiary.com/"
-          className="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+          className="text-2xl font-bold text-gray-900 "
         >
-          How to sanitiz array() in JS
+          Senior React Developer
         </a>
-        <p className="mt-2 text-gray-600 dark:text-gray-700">Nairobi</p>
+        <p className="mt-2 text-gray-600 font-bold">Nairobi</p>
       </div>
       <div className="flex items-center justify-between mt-4">
         <button
@@ -46,7 +46,7 @@ function RenderJobOnLoad() {
             className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
           />
           <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-700">
-            John Doe
+            Amazon
           </a>
         </div>
       </div>
