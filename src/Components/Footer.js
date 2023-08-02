@@ -34,15 +34,28 @@ function Footer() {
                 <li><a href="#">Get hired</a></li>
                 </ul>                             
             </div>
-                {/* Column4 */}
-                {/* <div className="col">
-                <h4>Socials</h4>
-                <ul className="list-unstyled">
-                <li><a href="#">Instgram</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                </ul>                             
-            </div> */}
+              
+             {/* Column4 */}
+          <div className="col">
+            <h4>Socials</h4>
+            <ul className="list-unstyled socialicons">
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
         </div>
         <div>

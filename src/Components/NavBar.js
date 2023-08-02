@@ -1,5 +1,7 @@
-export default function Navbar() {
-  const path = window.location.pathname
+import React from "react";
+import { Outlet, NavLink } from "react-router-dom";
+
+function NavBar() {
   return (
     <div className="nav-bar">
       <header>
@@ -19,10 +21,4 @@ export default function Navbar() {
   );
 }
 
-function CustomLink({href, children, ...props }) {
-  return (
-      <li>
-          <a href={href}>{children}</a>
-      </li> 
-  )
-}
+export default NavBar;
