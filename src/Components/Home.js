@@ -118,7 +118,7 @@ function Home() {
             </section>
           </div>
 
-          <div className="max-w-1xl px-4 py-4 mx-auto ">
+          <div className="max-w-1xl right-20 fixed px-4 py-4 mx-auto ">
             <CareerDetails careerData={careerData} careerId={careerId} />
           </div>
         </div>

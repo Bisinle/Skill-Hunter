@@ -7,7 +7,7 @@
       "location": "Nairobi",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -19,7 +19,7 @@
       "location": "Mombasa",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -31,7 +31,7 @@
       "location": "Nakuru",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -43,7 +43,7 @@
       "location": "Malindi",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -55,7 +55,7 @@
       "location": "Thika",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -67,7 +67,7 @@
       "location": "Nairobi",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -79,7 +79,7 @@
       "location": "Thika",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -91,7 +91,7 @@
       "location": "Mombasa",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -103,7 +103,7 @@
       "location": "Nairobi",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -115,7 +115,7 @@
       "location": "Nakuru",
       "company": "amazon",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "job-type": "full-time",
+      "type": "full-time",
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."

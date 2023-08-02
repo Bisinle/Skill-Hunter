@@ -16,7 +16,7 @@ function NewJob() {
     <div class="mt-7 bg-white  rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700">
       <div class="p-4 sm:p-7">
         <div class="text-center">
-          <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Post Job</h1>
+          <h1 class="block text-2xl font-bold text-gray-800">Post a Job</h1>
           
         </div>
 
@@ -24,53 +24,53 @@ function NewJob() {
           <form>
             <div class="grid gap-y-2">
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Title</label>
+                <label for="title" class="block text-sm font-bold ml-1 mb-2">Title</label>
                 <div class="relative">
-                  <input type="email" id="email" name="email" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
+                  <input type="text" id="title" name="title" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
                 </div>
                 </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Company</label>
+                <label for="company" class="block text-sm font-bold ml-1 mb-2 ">Company</label>
                 <div class="relative">
-                  <input type="email" id="email" name="email" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
+                  <input type="text" id="company" name="company" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
                 </div>
                 </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Location</label>
+                <label for="location" class="block text-sm font-bold ml-1 mb-2 ">Location</label>
                 <div class="relative">
-             <select class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"
-            >
-                <option value="1">Nairobi</option>
-                <option value="2">Nakuru</option>
-                <option value="3">Mombasa</option>
-                <option value="4">Kisumu</option>
-                <option value="5">Nakuru</option>
-                <option value="1">Eldoret</option>
-                <option value="2">Kericho</option>
-                <option value="3">Mombasa</option>
-                <option value="4">Kisumu</option>
-                <option value="5">nakuru</option>
-              </select>
+                  <select id="location" name="location" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"
+                  >
+                    <option value="nairobi">Nairobi</option>
+                    <option value="2">Nakuru</option>
+                    <option value="3">Mombasa</option>
+                    <option value="4">Kisumu</option>
+                    <option value="5">Nakuru</option>
+                    <option value="1">Eldoret</option>
+                    <option value="2">Kericho</option>
+                    <option value="3">Mombasa</option>
+                    <option value="4">Kisumu</option>
+                    <option value="5">nakuru</option>
+                    </select>
                   </div>
                </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Salary</label>
+                <label for="salary" class="block text-sm font-bold ml-1 mb-2 ">Salary</label>
                 <div class="relative">
-                  <input type="email" id="email" name="email" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
+                  <input type="number" id="salary" name="salary" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm" required aria-describedby="email-error" />
                 </div>               
               </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Description</label>
+                <label for="description" class="block text-sm font-bold ml-1 mb-2 ">Description</label>
                 <div class="relative">
                 <textarea
-   class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"id="exampleFormControlTextarea1"
-    rows="3"
-    placeholder="Your message"></textarea> </div>
+                  class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"id="description" name="description"
+                    rows="3"
+                    placeholder="Your message"></textarea> </div>
                 </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Job Type</label>
+                <label for="type" class="block text-sm font-bold ml-1 mb-2 ">Job Type</label>
                 <div class="relative">
-                <select class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"
+                <select id="type" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"
             >
                 <option value="1">Full-Time</option>
                 <option value="2">Part-Time</option>
@@ -78,7 +78,7 @@ function NewJob() {
               </select> </div>                
               </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Experience</label>
+                <label for="email" class="block text-sm font-bold ml-1 mb-2 ">Experience</label>
                 <div class="relative">
                 <textarea
                class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"id="exampleFormControlTextarea1"
@@ -86,7 +86,7 @@ function NewJob() {
                   placeholder="Your message"></textarea> </div>                
               </div>
               <div>
-                <label for="email" class="block text-sm font-bold ml-1 mb-2 dark:text-white">Skills</label>
+                <label for="email" class="block text-sm font-bold ml-1 mb-2 ">Skills</label>
                 <div class="relative">
                 <textarea
                    class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 shadow-sm"id="exampleFormControlTextarea1"
@@ -120,7 +120,7 @@ function NewJob() {
           <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">JavaScript</a>
         </div> 
         <div class="mt-2">
-          <a href="https://stackdiary.com/" class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">How to sanitiz array() in JS</a> 
+          <a href="https://stackdiary.com/" class="text-2xl font-bold text-gray-700  hover:text-gray-600 dark:hover:text-gray-200 hover:underline">How to sanitiz array() in JS</a> 
           <p class="mt-2 text-gray-600 dark:text-gray-300">Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu.</p>
         </div> 
         <div class="flex items-center justify-between mt-4">
