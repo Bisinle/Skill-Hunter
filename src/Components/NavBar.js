@@ -1,25 +1,23 @@
-import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
-
-function NavBar() {
+export default function Navbar() {
+  const path = window.location.pathname
   return (
-    <div className="nav-bar">
-      <header>
-        <h1>
-          SKILL <span>HUNTER</span>
-        </h1>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="careers">Careers</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="help">Help</NavLink>
-        </nav>
-      </header>
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
+  <nav className= "nav">
+      <a href="/" className="logo-title">
+          SKILL HUNTER
+      </a>
+      <ul>
+      <CustomLink href="/home">Home</CustomLink>
+      <CustomLink href="/about">About</CustomLink>
+      <CustomLink href="/help">Help</CustomLink>
+      </ul>
+  </nav>
+  )
 }
 
-export default NavBar;
+function CustomLink({href, children, ...props }) {
+  return (
+      <li>
+          <a href={href}>{children}</a>
+      </li> 
+  )
+}
