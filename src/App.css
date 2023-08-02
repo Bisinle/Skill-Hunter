@@ -155,8 +155,9 @@ main {
 
 }
 /*Contact*/
+/* 1rem = 16px (font-size)*/
 form {
-  margin-top: 50px;
+  max-width: 50rem;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -169,12 +170,9 @@ form textarea {
 }
 form input,
 form textarea {
-  border: 2px solid black;
-  margin-bottom: 60px;
+  border: 2px solid rgb(54, 53, 53);
   padding: 8px;
   border-radius: 4px;
-
-  width: 300px;
 }
 form label span {
   margin-bottom: 10px;

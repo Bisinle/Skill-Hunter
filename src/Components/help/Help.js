@@ -15,7 +15,7 @@ function Help() {
     </div>
     <nav>
       <NavLink to="faq">View FAQ</NavLink>
-      <NavLink to="contact">Contac us</NavLink> 
+      <NavLink to="contact">Contact us</NavLink> 
     </nav>
 
     <main>
