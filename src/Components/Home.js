@@ -83,7 +83,6 @@ function Home() {
 
   return (
     <>
-    {/* <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter}/> */}
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>
