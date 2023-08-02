@@ -30,6 +30,12 @@ function Card({ career, onButtonClick }) {
                     {" "}
                     <i class="fa fa-money-bills"></i> ${career.salary.toLocaleString()} per year
                   </span>
+                  <button
+                      type="button"
+                      className="text-gray-900 border border-gray-300 px-2 py-1 rounded-lg"
+                    >
+                      {career.experience}+ years
+                  </button>
                 </div>
                 <p className="pt-4">{career.description}</p>
               </div>
