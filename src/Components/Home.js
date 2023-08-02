@@ -18,6 +18,12 @@ function Home() {
     // console.log(id);
     setCareerId(id);
   }
+
+  function handleFilterChange(filteredCareers) {
+    setCareerData(filteredCareers);
+    // console.log(filteredCareers);
+  }
+
   const displayCareerdata = careerData.map((career) => {
     return (
       <span key={career.id}>
@@ -30,6 +36,7 @@ function Home() {
   // console.log(displayCareerdata);
   return (
     <>
+      <Filter onFilter={handleFilterChange} />
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>

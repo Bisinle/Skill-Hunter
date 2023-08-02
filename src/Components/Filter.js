@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { dataContext } from "../data/DataContextProvider";
 import "./filter.css";
 
-function Filter() {
+function Filter({onFilter}) {
   const { careerData } = useContext(dataContext);
 
   // set initial state of filteredCareers to fetched data
@@ -31,6 +31,8 @@ function Filter() {
       );
       setFilteredCareers(filtered); //update state with filtered data
     }
+
+    onFilter(filteredCareers);
   }
 
   return (
@@ -61,7 +63,7 @@ function Filter() {
             </div>
         </div>
 
-        {/* Render the filtered career cards. Should be merged with Home component cards */}
+        {/* Render the filtered career cards. Should be merged with Home component cards
         {filteredCareers.map((career) => (
             <div class="max-w-3xl mx-auto" key={career.id}>
                 <div class="flex flex-wrap">
@@ -92,7 +94,7 @@ function Filter() {
                     </div>
                 </div>
             </div>
-        ))}
+        ))} */}
     </>
   );
 }
