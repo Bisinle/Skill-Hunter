@@ -1,10 +1,11 @@
 import React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
 import { Route, Routes } from "react-router-dom";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
+import "./home.css"
 import NoResultsCard from "./NoResultsCard";
 import Newsletter from "./Newsletter";
 
@@ -12,6 +13,9 @@ function Home() {
   const { careerData, setCareerData } = useContext(dataContext);
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [careerId, setCareerId] = useState();
+  const [isSticky, setIsSticky] = useState(false);
+  const leftSectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
 
    // State to store the selected location from the filter dropdown
   const [selectedLocation, setSelectedLocation] = useState("");
@@ -37,6 +41,8 @@ function Home() {
   // Update the filteredData when careerData, searchTerm, or selectedLocation changes
   
   useEffect(() => {
+    const leftSection = leftSectionRef.current;
+    const rightSection = rightSectionRef.current;
 
     // Filter the careerData based on the search term
     const searchedData = careerData.filter((career) =>
@@ -55,6 +61,7 @@ function Home() {
 
     // Update the filteredData state with the result; search term, location selected, or both
     setFilteredData (filteredData)
+
 
 
   }, [careerData, searchTerm, selectedLocation])
@@ -80,15 +87,21 @@ function Home() {
     );
   });
 
+  const handleLeftScroll = () => {
+    const rightSection = rightSectionRef.current;
+    if (rightSection) {
+      rightSection.style.top = `${leftSectionRef.current.scrollTop}px`;
+    }
+  };
+
 
   return (
     <>
-    {/* <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter}/> */}
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
-              <div className="container px-4 mx-auto mb-10">
+              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "90vh" }} className="container px-4 mx-auto mb-10">
 
                 {/* Search bar and filter dropdown */}
                 <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
@@ -114,7 +127,7 @@ function Home() {
             </section>
           </div>
 
-          <div className="max-w-1xl px-4 py-4 mx-auto ">
+          <div ref={rightSectionRef} style={{ overflowY: "auto"}}  className="max-w-1xl px-4 py-4 mx-auto ">
             <CareerDetails careerData={careerData} careerId={careerId} />
           </div>
         </div>
