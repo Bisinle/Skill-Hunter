@@ -18,6 +18,9 @@ body {
 * {
   margin: 0;
 }
+/* .App {
+  position: relative;
+} */
 p {
   margin: 20px 0;
 }
