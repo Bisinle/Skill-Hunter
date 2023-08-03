@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function View({ jobs }) {
+function View({
+  jobs,
+  onClickDetails,
+  setIsStatic,
+  showRenderOnLoad,
+  setShowRenderOnLoad,
+}) {
+  const { careerDetails, setCareerDetail } = onClickDetails;
+
+  // useEffect(() => {
+  //   setIsStatic(false);
+  // }, []);
+
+  function handleDetails(career) {
+    console.log(career);
+    setCareerDetail(career);
+    setIsStatic(false);
+    setShowRenderOnLoad(true);
+  }
+
   const displayCareerdata = jobs.map((career) => {
     return (
       <div class="max-w-3xl mx-auto">
@@ -40,6 +59,7 @@ function View({ jobs }) {
                 <div class="w-auto p-2">
                   <div class="grid justify-items-end mt-6">
                     <button
+                      onClick={() => handleDetails(career)}
                       class="inline-block  w-40 px-4 py-2 text-white font-semibold tracking-tight bg-blue-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
                       href="#"
                     >

@@ -379,11 +379,3 @@ legend {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-#fortmButton {
-  color: white;
-  background-color: slateblue;
-  padding: 10px 20px;
-  text-align: center;
-  width: 200px;
-}
