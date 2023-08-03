@@ -5,15 +5,36 @@ const dataContext = createContext();
 function DataContextProvider({ children }) {
   const [careerData, setCareerData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [newlyPosted, setNewlyPosted] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/careers`)
+
+    fetch(` https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data))
       .finally(setIsLoading(false));
-  }, []);
+  }, [newlyPosted]);
 
-  const values = { careerData, setCareerData, setIsLoading };
+  function PostFormObjectToServer(newFormObject) {
+    console.log(newFormObject);
+    setNewlyPosted(!newlyPosted);
+    fetch(` https://skill-hunter-server.onrender.com/careers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newFormObject),
+    });
+    // .then((res) => res.json())
+    // .then((data) => (data));
+  }
+
+  const values = {
+    careerData,
+    setCareerData,
+    setIsLoading,
+    PostFormObjectToServer,
+  };
   return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
 }
 
