@@ -82,7 +82,7 @@ function Home() {
   // Create JSX for displaying career cards based on the filteredData
   const displayCareerdata = filteredData.map((career) => {
     return (
-      <span key={career.id}>
+      <span id="car-span" key={career.id}>
         {" "}
         <Card onButtonClick={getCareerIdFromCard} career={career} />
       </span>
@@ -99,17 +99,13 @@ function Home() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-2 justify-center">
+        <div className="grid grid-cols-2 justify-center" id="home-main-div">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
               {/* adjustable viewheight */}
-              <div
-                ref={leftSectionRef}
-                style={{ overflowY: "auto", height: "82vh" }}
-                className="container px-4 mx-auto mb-10"
-              >
+              <div id="home-card-div" ref={leftSectionRef}>
                 {/* Search bar and filter dropdown */}
-                <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
+                <div className="search-bar relative flex max-w-3xl mb-5 mt-5 shadow-lg mx-auto">
                   <input
                     type="text"
                     id="default-search"

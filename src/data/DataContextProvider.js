@@ -4,11 +4,11 @@ import { useContext, useState, useEffect } from "react";
 const dataContext = createContext();
 function DataContextProvider({ children }) {
   const [careerData, setCareerData] = useState([]);
-  const [faqData, setFaqData] = useState([])
+  const [faqData, setFaqData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [newlyPosted ,setNewlyPosted] =useState(false)
+  const [newlyPosted, setNewlyPosted] = useState(false);
   // const [deletedJobs,setDeletedJobs]=useState()
-  const [isDeleted,setIsDeleted]=useState([])
+  const [isDeleted, setIsDeleted] = useState([]);
 
   useEffect(() => {
     fetch(`https://skill-hunter-server.onrender.com/careers`)
@@ -20,7 +20,9 @@ function DataContextProvider({ children }) {
       .then((res) => res.json())
       .then((data) => setFaqData(data))
       .finally(setIsLoading(false));
-  }, [newlyPosted,isDeleted]);
+  }, [newlyPosted, isDeleted]);
+
+  /* function to post the newObject to the server */
   function PostFormObjectToServer(newFormObject) {
     console.log(newFormObject);
     setNewlyPosted(!newlyPosted);
@@ -34,20 +36,16 @@ function DataContextProvider({ children }) {
     // .then((res) => res.json())
     // .then((data) => (data));
   }
-  function deleteFromServer(deleteId){
-    console.log(deleteId)
-  
-      fetch(`https://skill-hunter-server.onrender.com/careers/${deleteId}`,{
-        method:"DELETE",
-        headers:
-        {"content-type":"application/json"},
-      })
-      .then(res=>res.json())
-      .then((data)=>{
-      
-      })
-     .finally(setIsDeleted(true))
-    
+  function deleteFromServer(deleteId) {
+    console.log(deleteId);
+
+    fetch(`https://skill-hunter-server.onrender.com/careers${deleteId}`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {})
+      .finally(setIsDeleted(true));
   }
 
   const values = {
@@ -57,7 +55,7 @@ function DataContextProvider({ children }) {
     PostFormObjectToServer,
     deleteFromServer,
     faqData,
-    setFaqData
+    setFaqData,
   };
   return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
 }

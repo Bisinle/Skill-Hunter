@@ -379,3 +379,30 @@ legend {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/*card-div*/
+#home-card-div {
+  background-color: whitesmoke;
+  overflow: scroll;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 70px;
+}
+
+#car-span {
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 10px 3px rgb(190, 187, 187);
+}
+/* career details*/
+#career-details {
+}
+/*  career detial requrements*/
+#requirements {
+}
+/*home main div*/
+#home-main-div {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+}
