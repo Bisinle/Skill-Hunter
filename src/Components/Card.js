@@ -20,13 +20,13 @@ function Card({ career, onButtonClick }) {
                   {career.title}
                 </h3>
                 <p className="text-lg">{career.company}</p>
-                <p className="text-lg">{career.location}</p>
+                <p className="text-lg mb-2">{career.location}</p>
 
                 <div>
                   <span className="bg-gray-300 mr-3 p-2 roundend-md">
                     Full Time: {} /
                   </span>
-                  <span className="bg-gray-300 mr-3 p-2 roundend-md">
+                  <span className="bg-gray-300 mr-5 p-2 roundend-md">
                     {" "}
                     Salary: {career.salary}
                   </span>

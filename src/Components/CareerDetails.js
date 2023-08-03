@@ -23,7 +23,7 @@ function CareerDetails({ careerData, careerId }) {
       {!currentCareerDetail ? (
         <h1>LOADING...</h1>
       ) : (
-        <div className="max-w-2xl px-8 mt-4 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="max-w-2xl px-8 mt-4 py-4 mx-auto bg-white rounded-lg shadow-lg  dark:bg-gray-800">
           <div className="flex items-center justify-between">
             <span className="text-sm font-light text-gray-600 dark:text-gray-400">
               {currentCareerDetail.posted}
@@ -50,12 +50,7 @@ function CareerDetails({ careerData, careerId }) {
             >
               Apply
             </button>
-            <button
-              type="button"
-              className="text-gray-900 bg-white border border-gray-300 "
-            >
-              Save
-            </button>
+
             <a
               href="#"
               className="text-blue-600 dark:text-blue-400 hover:underline"
