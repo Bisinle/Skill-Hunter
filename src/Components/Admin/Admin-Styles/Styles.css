@@ -1,0 +1,24 @@
+#fortmButton,
+#table-link {
+  color: white;
+  background-color: slateblue;
+  padding: 10px 20px;
+  text-align: center;
+  width: 200px;
+  margin-top: 20px;
+  margin: 20px;
+}
+
+#career-detail-admin-section {
+  margin-top: 80px;
+}
+
+thead {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgb(177, 214, 214);
+}
+td {
+  font-size: 12px;
+}

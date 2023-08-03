@@ -4,29 +4,28 @@ import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
-import "./home.css"
+import "./home.css";
 import NoResultsCard from "./NoResultsCard";
 import Newsletter from "./Newsletter";
 
-function Home() {
+function Home({ PostFormObjectToApplicantServer }) {
   const { careerData, setCareerData } = useContext(dataContext);
   const [careerId, setCareerId] = useState();
   const leftSectionRef = useRef(null);
   const rightSectionRef = useRef(null);
 
-   // State to store the selected location from the filter dropdown
+  // State to store the selected location from the filter dropdown
   const [selectedLocation, setSelectedLocation] = useState("");
 
   // State to store the filtered data based on both search term and location
   const [filteredData, setFilteredData] = useState([]);
 
-
   // State to hold the search term
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Function to update the search term
   function handleSearch(event) {
-    setSearchTerm(event.target.value)
+    setSearchTerm(event.target.value);
   }
 
   // Function to update the selected location based on filter dropdown selection
@@ -34,16 +33,15 @@ function Home() {
     setSelectedLocation(filterLocation);
   }
 
-
   // Update the filteredData when careerData, searchTerm, or selectedLocation changes
-  
+
   useEffect(() => {
     const leftSection = leftSectionRef.current;
     const rightSection = rightSectionRef.current;
 
     // Filter the careerData based on the search term
     const searchedData = careerData.filter((career) =>
-    career.title.toLowerCase().includes(searchTerm.toLowerCase())
+      career.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     //set filteredData to searchedData: no location is selected in this case
@@ -52,12 +50,13 @@ function Home() {
     // If a location is selected, further filter based on location
     if (selectedLocation) {
       filteredData = searchedData.filter(
-        (career) => career.location.toLowerCase() === selectedLocation.toLocaleLowerCase()
-      )
+        (career) =>
+          career.location.toLowerCase() === selectedLocation.toLocaleLowerCase()
+      );
     }
 
     // Update the filteredData state with the result; search term, location selected, or both
-    setFilteredData (filteredData)
+    setFilteredData(filteredData);
 
     if (leftSection && rightSection) {
       leftSection.addEventListener("scroll", handleLeftScroll);
@@ -68,9 +67,7 @@ function Home() {
         leftSection.removeEventListener("scroll", handleLeftScroll);
       }
     };
-
-  }, [careerData, searchTerm, selectedLocation])
-
+  }, [careerData, searchTerm, selectedLocation]);
 
   function getCareerIdFromCard(id) {
     // console.log(id);
@@ -78,14 +75,14 @@ function Home() {
   }
 
   // Function to handle the filter change and update filteredData
-  function handleFilterChange (filteredCareers) {
-    setFilteredData (filteredCareers)
+  function handleFilterChange(filteredCareers) {
+    setFilteredData(filteredCareers);
   }
 
   // Create JSX for displaying career cards based on the filteredData
   const displayCareerdata = filteredData.map((career) => {
     return (
-      <span key={career.id}>
+      <span id="car-span" key={career.id}>
         {" "}
         <Card onButtonClick={getCareerIdFromCard} career={career} />
       </span>
@@ -99,18 +96,16 @@ function Home() {
     }
   };
 
-
   return (
     <>
       <div>
-        <div className="grid grid-cols-2 justify-center">
+        <div className="grid grid-cols-2 justify-center" id="home-main-div">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
-            {/* adjustable viewheight */}
-              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "82vh" }} className="container px-4 mx-auto mb-10">
-
+              {/* adjustable viewheight */}
+              <div id="home-card-div" ref={leftSectionRef}>
                 {/* Search bar and filter dropdown */}
-                <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
+                <div className="search-bar relative flex max-w-3xl mb-5 mt-5 shadow-lg mx-auto">
                   <input
                     type="text"
                     id="default-search"
@@ -119,27 +114,36 @@ function Home() {
                     placeholder="Search"
                     className="w-full px-4 text-gray-800 border border-gray-900 rounded-lg"
                   />
-                  <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter} />
+                  <Filter
+                    onFilter={handleFilterChange}
+                    onLocationFilter={handleLocationFilter}
+                  />
                 </div>
 
                 {/* Render the filtered careers */}
                 {displayCareerdata.length === 0 ? (
                   <NoResultsCard />
-                  ) : (
-                    displayCareerdata
+                ) : (
+                  displayCareerdata
                 )}
-
               </div>
             </section>
           </div>
 
-          <div ref={rightSectionRef} style={{ overflowY: "auto"}}  className="max-w-1xl px-4 py-4 mx-auto ">
-            <CareerDetails careerData={careerData} careerId={careerId} />
+          <div
+            ref={rightSectionRef}
+            style={{ overflowY: "auto" }}
+            className="max-w-1xl px-4 py-4 mx-auto "
+          >
+            <CareerDetails
+              careerData={careerData}
+              careerId={careerId}
+              PostFormObjectToApplicantServer={PostFormObjectToApplicantServer}
+            />
           </div>
         </div>
       </div>
       <Newsletter />
-
     </>
   );
 }
