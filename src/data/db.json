@@ -120,5 +120,37 @@
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
+  ], 
+  "faq": [
+    {
+      "id": 201, 
+      "title": "My Account",
+      "questions": [
+        "How do I close account?",
+        "How do I reset my account?",
+        "I can't Sign in to My account?",
+        "How Do I Create an Indeed Account?"
+      ]
+    },
+    {
+      "id": 202, 
+      "title": "Job Alerts",
+      "questions": [
+        "How do I setup Job alerts?",
+        "Can I recieve job alerts for specific locations?",
+        "How can I improve accuracy of job alerts?",
+        "Can I recieve job alerts for multiple industries or job titles?"
+      ]
+    },
+    {
+      "id": 203, 
+      "title": "Applying for a job",
+      "questions": [
+        "How to Apply to a Job on Skill Search",
+        "Writing Cover Letters and Application Letters (Templates and Tips)",
+        "How do I upload my resume?"
+      ]
+    }
   ]
+  
 }

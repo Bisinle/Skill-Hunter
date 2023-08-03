@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { } from "react-ci"
+import { MdSwitchAccount  } from "react-icons/md"
 
 function Faq() {
   return (
@@ -9,31 +9,39 @@ function Faq() {
 
     <div className="grid grid-cols-2 gap-4">
       <div className="question border p-3 rounded-lg border-gray-500">
-        <p className="mb-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>My Account</strong></p>
+        <MdSwitchAccount size={"3rem"} className="text-pink-700" />
+        <p className="my-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>My Account</strong></p>
         <Link to="#" className="block pb-1 underline text-sky-800">How do I close account</Link>
         <Link to="#" className="block pb-1 underline text-sky-800">How do I reset my account</Link>
         <Link to="#" className="block pb-1 underline text-sky-800">I can't Sign in to My account</Link>
         <Link to="#" className="block pb-1 underline text-sky-800">How Do I Create an Indeed Account?</Link>
       </div>
 
-      <div className="question">
-        <p>
-          <strong>My Account</strong>
-        </p>
-        <a href="#">How do I close account</a>
-        <a href="#">How do I reset my account</a>
-        <a href="#">I can't Sign in to My account</a>
-        <a href="#">How Do I Create an Indeed Account?</a>
+      <div className="question border p-3 rounded-lg border-gray-500">
+        <MdSwitchAccount size={"3rem"} className="text-pink-700" />
+        <p className="my-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>Job Alerts</strong></p>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I close account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I reset my account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">I can't Sign in to My account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How Do I Create an Indeed Account?</Link>
       </div>
 
-      <div className="question">
-        <p>
-          <strong>My Account</strong>
-        </p>
-        <a href="#">How do I close account</a>
-        <a href="#">How do I reset my account</a>
-        <a href="#">I can't Sign in to My account</a>
-        <a href="#">How Do I Create an Indeed Account?</a>
+      <div className="question border p-3 rounded-lg border-gray-500">
+        <MdSwitchAccount size={"3rem"} className="text-pink-700" />
+        <p className="my-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>Job Search </strong></p>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I close account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I reset my account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">I can't Sign in to My account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How Do I Create an Indeed Account?</Link>
+      </div>
+
+      <div className="question border p-3 rounded-lg border-gray-500">
+        <MdSwitchAccount size={"3rem"} className="text-pink-700" />
+        <p className="my-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>My Account</strong></p>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I close account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How do I reset my account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">I can't Sign in to My account</Link>
+        <Link to="#" className="block pb-1 underline text-sky-800">How Do I Create an Indeed Account?</Link>
       </div>
     </div>
   
