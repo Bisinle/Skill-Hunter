@@ -23,6 +23,12 @@
       "name": "Catchap muzio",
       "email": "JohnDoe@gmail.com",
       "CV": "C:fakepathgoogle-chrome-stable_current_amd64.deb"
+    },
+    {
+      "name": "mutune",
+      "CV": "C:\\fakepath\\Gemfile.lock",
+      "email": "katano",
+      "id": 5
     }
   ]
 }

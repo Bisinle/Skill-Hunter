@@ -387,6 +387,7 @@ legend {
   display: flex;
   flex-direction: column;
   padding: 0 70px;
+  background-color: whitesmoke;
 }
 
 #car-span {
@@ -403,3 +404,5 @@ legend {
   display: flex;
   flex-direction: row;
 }
+
+/*apply forom **/

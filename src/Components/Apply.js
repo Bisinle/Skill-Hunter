@@ -3,11 +3,12 @@ import { useState, useEffect, useContext } from "react";
 import { dataContext } from "../data/DataContextProvider";
 import { toast } from "react-toastify";
 
-function Apply({ PostFormObjectToServer }) {
+function Apply() {
+  const { postToApplicantServer } = useContext(dataContext);
   const [closeForm, setCloseForm] = useState(true);
   const [FormObject, setFormObject] = useState({
-    fname: "",
-    file_upload: "",
+    name: "",
+    CV: "",
     email: "",
   });
 
@@ -23,10 +24,10 @@ function Apply({ PostFormObjectToServer }) {
   function formSubmit(e) {
     e.preventDefault();
     console.log(FormObject);
-    // PostFormObjectToServer(FormObject);
+    postToApplicantServer(FormObject);
     setFormObject({
-      fname: "",
-      file_upload: "",
+      name: "",
+      CV: "",
       email: "",
     });
     toastSuccessfullyApplied();
@@ -41,7 +42,7 @@ function Apply({ PostFormObjectToServer }) {
       type: "success",
     });
   return (
-    <div>
+    <div id="apply-form">
       <form onSubmit={formSubmit}>
         <div
           class=" mt-4  left-0 top-0 flex justify-center items-center "
@@ -61,8 +62,8 @@ function Apply({ PostFormObjectToServer }) {
                 </label>
                 <input
                   id="name"
-                  name="fname"
-                  value={FormObject.fname}
+                  name="name"
+                  value={FormObject.name}
                   onChange={FornObjectCreator}
                   required
                   class="mb-2 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
@@ -108,9 +109,9 @@ function Apply({ PostFormObjectToServer }) {
                   </span>
                   <input
                     type="file"
-                    id="file_upload"
-                    name="file_upload"
-                    value={FormObject.file_upload}
+                    id="CV"
+                    name="CV"
+                    value={FormObject.CV}
                     onChange={FornObjectCreator}
                     required
                     class="hidden"

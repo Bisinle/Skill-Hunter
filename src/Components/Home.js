@@ -8,7 +8,7 @@ import "./home.css";
 import NoResultsCard from "./NoResultsCard";
 import Newsletter from "./Newsletter";
 
-function Home() {
+function Home({ PostFormObjectToApplicantServer }) {
   const { careerData, setCareerData } = useContext(dataContext);
   const [careerId, setCareerId] = useState();
   const leftSectionRef = useRef(null);
@@ -135,7 +135,11 @@ function Home() {
             style={{ overflowY: "auto" }}
             className="max-w-1xl px-4 py-4 mx-auto "
           >
-            <CareerDetails careerData={careerData} careerId={careerId} />
+            <CareerDetails
+              careerData={careerData}
+              careerId={careerId}
+              PostFormObjectToApplicantServer={PostFormObjectToApplicantServer}
+            />
           </div>
         </div>
       </div>

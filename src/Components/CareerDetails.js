@@ -6,8 +6,13 @@ import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
 import Careers from "./Careers";
 import RenderJobOnLoad from "./RenderJobOnLoad";
+
 import Apply from "./Apply";
-function CareerDetails({ careerData, careerId }) {
+function CareerDetails({
+  careerData,
+  careerId,
+  PostFormObjectToApplicantServer,
+}) {
   const { isLoading } = useContext(dataContext);
   const [isShowMore, setIsShowMore] = useState(true);
   const [isApplied, setIsApplied] = useState(false);
@@ -92,7 +97,9 @@ function CareerDetails({ careerData, careerId }) {
         </div>
       )}
       {isApplied ? (
-        <Apply />
+        <Apply
+          PostFormObjectToApplicantServer={PostFormObjectToApplicantServer}
+        />
       ) : (
         <div>
           {isShowMore ? (

@@ -2,14 +2,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Applicant from "./Applicant";
+import { useContext } from "react";
+import { dataContext } from "../../data/DataContextProvider";
 
 function ApplicantsTable() {
-  const [applicantsData, setApplicantsData] = useState([]);
-  useEffect(() => {
-    fetch(` http://localhost:4000/Applicants`)
-      .then((res) => res.json())
-      .then((data) => setApplicantsData(data));
-  }, []);
+  const { applicantsData } = useContext(dataContext);
+  // const [applicantsData, setApplicantsData] = useState([]);
+  // useEffect(() => {
+  //   fetch(` http://localhost:4000/Applicants`)
+  //     .then((res) => res.json())
+  //     .then((data) => setApplicantsData(data));
+  // }, []);
   console.log(applicantsData);
 
   function onDeleteTransaction(applicant) {
