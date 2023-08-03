@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import View from "./View";
 import NewJob from "./NewJob";
 
-function Admin({ jobs, PostFormObjectToServer }) {
+function Admin({ jobs, PostFormObjectToServer,deleteFromServer }) {
   const [adminJobs, setAdminJobs] = useState([]);
   const [show, setShow] = useState(false);
 
@@ -10,12 +10,14 @@ function Admin({ jobs, PostFormObjectToServer }) {
     setAdminJobs(jobs);
   }, []);
 
+
+
   const btnText = show ? "Close Form" : "Post Job";
   return (
     <div className="grid grid-cols-2 justify-center admin">
       <div>
         {" "}
-        <View jobs={jobs} />
+        <View jobs={jobs} deleteFromServer={deleteFromServer} />
       </div>
       <div>
         <button id="fortmButton" onClick={() => setShow(!show)}>

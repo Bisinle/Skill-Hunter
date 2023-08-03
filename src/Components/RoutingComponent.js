@@ -14,7 +14,7 @@ import Faq from "./help/Faq";
 import ContactUs from "./help/ContactUs";
 
 function RoutingComponent() {
-  const { careerData, PostFormObjectToServer } = useContext(dataContext);
+  const { careerData, PostFormObjectToServer ,deleteFromServer} = useContext(dataContext);
   console.log(careerData);
   return (
     <Routes>
@@ -27,6 +27,7 @@ function RoutingComponent() {
           <Admin
             jobs={careerData}
             PostFormObjectToServer={PostFormObjectToServer}
+            deleteFromServer={deleteFromServer}
           />
         }
       />

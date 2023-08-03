@@ -7,6 +7,8 @@ function DataContextProvider({ children }) {
   const [faqData, setFaqData] = useState([])
   const [isLoading, setIsLoading] = useState(true);
   const [newlyPosted ,setNewlyPosted] =useState(false)
+  // const [deletedJobs,setDeletedJobs]=useState()
+  const [isDeleted,setIsDeleted]=useState([])
 
   useEffect(() => {
     fetch(`https://skill-hunter-server.onrender.com/careers`)
@@ -18,7 +20,7 @@ function DataContextProvider({ children }) {
       .then((res) => res.json())
       .then((data) => setFaqData(data))
       .finally(setIsLoading(false));
-  }, [newlyPosted]);
+  }, [newlyPosted,isDeleted]);
   function PostFormObjectToServer(newFormObject) {
     console.log(newFormObject);
     setNewlyPosted(!newlyPosted);
@@ -32,12 +34,28 @@ function DataContextProvider({ children }) {
     // .then((res) => res.json())
     // .then((data) => (data));
   }
+  function deleteFromServer(deleteId){
+    console.log(deleteId)
+  
+      fetch(`https://skill-hunter-server.onrender.com/careers/${deleteId}`,{
+        method:"DELETE",
+        headers:
+        {"content-type":"application/json"},
+      })
+      .then(res=>res.json())
+      .then((data)=>{
+      
+      })
+     .finally(setIsDeleted(true))
+    
+  }
 
   const values = {
     careerData,
     setCareerData,
     setIsLoading,
     PostFormObjectToServer,
+    deleteFromServer,
     faqData,
     setFaqData
   };
