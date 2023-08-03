@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "./index.css";
 //context
@@ -16,6 +16,7 @@ import Footer from "./Components/Footer";
 function App() {
   const { careerData, setCareerData } = useContext(dataContext);
   // console.log(careerData);
+
   return (
     <div className="App">
       <NavBar />
