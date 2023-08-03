@@ -12,9 +12,11 @@ import Help from "./help/Help";
 
 import Faq from "./help/Faq";
 import ContactUs from "./help/ContactUs";
+import ApplicantsTable from "./Applicants/ApplicantsTable";
 
 function RoutingComponent() {
-  const { careerData, PostFormObjectToServer ,deleteFromServer} = useContext(dataContext);
+  const { careerData, PostFormObjectToServer, deleteFromServer } =
+    useContext(dataContext);
   console.log(careerData);
   return (
     <Routes>
@@ -30,7 +32,9 @@ function RoutingComponent() {
             deleteFromServer={deleteFromServer}
           />
         }
-      />
+      >
+        <Route path="Applications" element={<ApplicantsTable />} />
+      </Route>
       <Route path="help" element={<Help />}>
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<ContactUs />} />

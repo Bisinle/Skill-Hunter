@@ -382,7 +382,6 @@ legend {
 
 /*card-div*/
 #home-card-div {
-  background-color: whitesmoke;
   overflow: scroll;
   height: 82vh;
   display: flex;
@@ -392,7 +391,6 @@ legend {
 
 #car-span {
   margin-bottom: 30px;
-  box-shadow: 0px 0px 10px 3px rgb(190, 187, 187);
 }
 /* career details*/
 #career-details {
@@ -402,7 +400,6 @@ legend {
 }
 /*home main div*/
 #home-main-div {
-  background-color: whitesmoke;
   display: flex;
   flex-direction: row;
 }
