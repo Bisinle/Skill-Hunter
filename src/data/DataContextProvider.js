@@ -8,6 +8,7 @@ function DataContextProvider({ children }) {
   const [newlyPosted, setNewlyPosted] = useState(true);
 
   useEffect(() => {
+
     fetch(` https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data))
@@ -41,3 +42,4 @@ export default DataContextProvider;
 export { dataContext };
 
 //https://skill-hunter-server.onrender.com/careers
+//http://localhost:3000/careers
