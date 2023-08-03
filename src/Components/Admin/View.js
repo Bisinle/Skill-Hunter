@@ -20,6 +20,14 @@ function View({
     setShowRenderOnLoad(true);
   }
 
+
+function View({ jobs,onDeleteJob,deleteFromServer }) {
+
+  const handleDeleteClick=(jobId)=>{
+    deleteFromServer(jobId)
+  }
+
+
   const displayCareerdata = jobs.map((career) => {
     return (
       <div class="max-w-3xl mx-auto">
@@ -73,7 +81,8 @@ function View({
                     </button>
                     <button
                       class="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-red-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
-                      href="#"
+                      
+                      onClick={()=>handleDeleteClick(career.id)}
                     >
                       Delete
                     </button>

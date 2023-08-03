@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import View from "./View";
 import NewJob from "./NewJob";
+
 import AdminCareerDetails from "./AdminCareerDetails";
-import careerDetails from "../CareerDetails";
-import CareerDetails from "../CareerDetails";
-import RenderJobOnLoad from "../RenderJobOnLoad";
 import AdminLoadDetailOnInitialRender from "./AdminLoadDetailOnInitialRender";
 import Styles from "./Admin-Styles/Styles.css";
-function Admin({ jobs, PostFormObjectToServer }) {
+
+
+
+function Admin({ jobs, PostFormObjectToServer,deleteFromServer }) {
+
   const [adminJobs, setAdminJobs] = useState([]);
   const [show, setShow] = useState(false);
   const [showRenderOnLoad, setShowRenderOnLoad] = useState(false);
@@ -21,18 +23,23 @@ function Admin({ jobs, PostFormObjectToServer }) {
     setAdminJobs(jobs);
   }, []);
 
+
+
   const btnText = show ? "Close Form" : "Post Job";
   return (
     <div className="grid grid-cols-2 justify-center admin">
       <div>
         {" "}
+
         <View
           jobs={jobs}
           onClickDetails={sendSatateToCareerDetails}
           setIsStatic={setIsStatic}
           setShowRenderOnLoad={setShowRenderOnLoad}
           showRenderOnLoad={showRenderOnLoad}
+  deleteFromServer={deleteFromServer}
         />
+
       </div>
       <div>
         <button
