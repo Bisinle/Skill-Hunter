@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import View from "./View";
 import NewJob from "./NewJob";
+import { NavLink, Outlet } from "react-router-dom";
 
 import AdminCareerDetails from "./AdminCareerDetails";
 import AdminLoadDetailOnInitialRender from "./AdminLoadDetailOnInitialRender";
 import Styles from "./Admin-Styles/Styles.css";
+import { tab } from "@material-tailwind/react";
 
 function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
   const [adminJobs, setAdminJobs] = useState([]);
   const [show, setShow] = useState(false);
   const [showRenderOnLoad, setShowRenderOnLoad] = useState(false);
+  const [showTable, setShowTable] = useState(false);
 
   const [careerDetails, setCareerDetail] = useState({});
   const sendSatateToCareerDetails = { careerDetails, setCareerDetail };
@@ -19,6 +22,10 @@ function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
   useEffect(() => {
     setAdminJobs(jobs);
   }, []);
+
+  function tableHandle() {
+    setShowTable(!showTable);
+  }
 
   console.log(jobs);
   const btnText = show ? "Close Form" : "Post Job";
@@ -44,17 +51,27 @@ function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
         >
           {btnText}
         </button>
-        {show ? (
-          <NewJob PostFormObjectToServer={PostFormObjectToServer} />
+        <NavLink id="table-link" to="Applications" onClick={tableHandle}>
+          Applications
+        </NavLink>
+
+        {showTable ? (
+          <Outlet />
         ) : (
-          <div id="career-detail-admin-section">
-            {showRenderOnLoad ? (
-              <AdminCareerDetails
-                careerDetails={careerDetails}
-                isStatic={isStatic}
-              />
+          <div>
+            {show ? (
+              <NewJob PostFormObjectToServer={PostFormObjectToServer} />
             ) : (
-              <AdminLoadDetailOnInitialRender />
+              <div id="career-detail-admin-section">
+                {showRenderOnLoad ? (
+                  <AdminCareerDetails
+                    careerDetails={careerDetails}
+                    isStatic={isStatic}
+                  />
+                ) : (
+                  <AdminLoadDetailOnInitialRender />
+                )}
+              </div>
             )}
           </div>
         )}

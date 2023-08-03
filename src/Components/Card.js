@@ -7,7 +7,7 @@ function Card({ career, onButtonClick }) {
     onButtonClick(id);
   }
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto" id="card-dv">
       <div className="flex flex-wrap ">
         <div className="w-full p-1">
           <a

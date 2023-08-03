@@ -9,16 +9,33 @@ import NavBar from "../Components/NavBar";
 import About from "../Components/About";
 import Admin from "./Admin/Admin";
 import Help from "./help/Help";
-
 import Faq from "./help/Faq";
 import ContactUs from "./help/ContactUs";
+import ApplicantsTable from "./Applicants/ApplicantsTable";
+
+import { createContext } from "react";
+export const ApplicantContext = createContext();
 
 function RoutingComponent() {
-  const { careerData, PostFormObjectToServer ,deleteFromServer} = useContext(dataContext);
+  const { careerData, PostFormObjectToServer, deleteFromServer } =
+    useContext(dataContext);
+  const [passFormObjectToApplicantsTable, setPassFormObjectToApplicantsTable] =
+    useState("");
   console.log(careerData);
+
+  function PostFormObjectToApplicantServer(applicatant) {
+    console.log(applicatant);
+  }
   return (
     <Routes>
-      <Route index element={<Home />} />
+      <Route
+        index
+        element={
+          <Home
+            PostFormObjectToApplicantServer={PostFormObjectToApplicantServer}
+          />
+        }
+      />
 
       <Route path="about" element={<About />} />
       <Route
@@ -30,7 +47,9 @@ function RoutingComponent() {
             deleteFromServer={deleteFromServer}
           />
         }
-      />
+      >
+        <Route path="Applications" element={<ApplicantsTable />} />
+      </Route>
       <Route path="help" element={<Help />}>
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<ContactUs />} />
