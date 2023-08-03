@@ -4,17 +4,21 @@ import { useContext, useState, useEffect } from "react";
 const dataContext = createContext();
 function DataContextProvider({ children }) {
   const [careerData, setCareerData] = useState([]);
+  const [faqData, setFaqData] = useState([])
   const [isLoading, setIsLoading] = useState(true);
-  const [newlyPosted, setNewlyPosted] = useState(true);
+  const [newlyPosted ,setNewlyPosted] =useState(false)
 
   useEffect(() => {
-
-    fetch(` https://skill-hunter-server.onrender.com/careers`)
+    fetch(`https://skill-hunter-server.onrender.com/careers`)
       .then((res) => res.json())
       .then((data) => setCareerData(data))
       .finally(setIsLoading(false));
-  }, [newlyPosted]);
 
+    fetch(`https://skill-hunter-server.onrender.com/faq`)
+      .then((res) => res.json())
+      .then((data) => setFaqData(data))
+      .finally(setIsLoading(false));
+  }, [newlyPosted]);
   function PostFormObjectToServer(newFormObject) {
     console.log(newFormObject);
     setNewlyPosted(!newlyPosted);
@@ -34,6 +38,8 @@ function DataContextProvider({ children }) {
     setCareerData,
     setIsLoading,
     PostFormObjectToServer,
+    faqData,
+    setFaqData
   };
   return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
 }
