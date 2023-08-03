@@ -4,7 +4,7 @@ import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
-import "./home.css"
+import "./home.css";
 import NoResultsCard from "./NoResultsCard";
 import Newsletter from "./Newsletter";
 
@@ -34,12 +34,11 @@ function Home() {
   }
 
   // Update the filteredData when careerData, searchTerm, or selectedLocation changes
-  
+
   useEffect(() => {
     const leftSection = leftSectionRef.current;
     const rightSection = rightSectionRef.current;
 
-  useEffect(() => {
     // Filter the careerData based on the search term
     const searchedData = careerData.filter((career) =>
       career.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -57,11 +56,7 @@ function Home() {
     }
 
     // Update the filteredData state with the result; search term, location selected, or both
-<<<<<<< HEAD
     setFilteredData(filteredData);
-  }, [careerData, searchTerm, selectedLocation]);
-=======
-    setFilteredData (filteredData)
 
     if (leftSection && rightSection) {
       leftSection.addEventListener("scroll", handleLeftScroll);
@@ -72,10 +67,7 @@ function Home() {
         leftSection.removeEventListener("scroll", handleLeftScroll);
       }
     };
-
-  }, [careerData, searchTerm, selectedLocation])
-
->>>>>>> origin/development
+  }, [careerData, searchTerm, selectedLocation]);
 
   function getCareerIdFromCard(id) {
     // console.log(id);
@@ -97,11 +89,6 @@ function Home() {
     );
   });
 
-<<<<<<< HEAD
-  return (
-    <>
-      {/* <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter}/> */}
-=======
   const handleLeftScroll = () => {
     const rightSection = rightSectionRef.current;
     if (rightSection) {
@@ -109,21 +96,18 @@ function Home() {
     }
   };
 
-
   return (
     <>
->>>>>>> origin/development
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
-<<<<<<< HEAD
-              <div className="container px-4 mx-auto">
-=======
-            {/* adjustable viewheight */}
-              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "82vh" }} className="container px-4 mx-auto mb-10">
-
->>>>>>> origin/development
+              {/* adjustable viewheight */}
+              <div
+                ref={leftSectionRef}
+                style={{ overflowY: "auto", height: "82vh" }}
+                className="container px-4 mx-auto mb-10"
+              >
                 {/* Search bar and filter dropdown */}
                 <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
                   <input
@@ -142,34 +126,24 @@ function Home() {
 
                 {/* Render the filtered careers */}
                 {displayCareerdata.length === 0 ? (
-<<<<<<< HEAD
-                  <p className="text-red-600">No Result Found</p>
+                  <NoResultsCard />
                 ) : (
                   displayCareerdata
-=======
-                  <NoResultsCard />
-                  ) : (
-                    displayCareerdata
->>>>>>> origin/development
                 )}
               </div>
             </section>
           </div>
 
-<<<<<<< HEAD
-          <div className="max-w-1xl right-20  px-4 py-4 mx-auto ">
-=======
-          <div ref={rightSectionRef} style={{ overflowY: "auto"}}  className="max-w-1xl px-4 py-4 mx-auto ">
->>>>>>> origin/development
+          <div
+            ref={rightSectionRef}
+            style={{ overflowY: "auto" }}
+            className="max-w-1xl px-4 py-4 mx-auto "
+          >
             <CareerDetails careerData={careerData} careerId={careerId} />
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-=======
       <Newsletter />
-
->>>>>>> origin/development
     </>
   );
 }
