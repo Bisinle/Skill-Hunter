@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { } from "react-ci"
 
 function Faq() {
   return (
@@ -7,11 +8,8 @@ function Faq() {
     <h3 className="text-2xl text-center font-bold mb-4">Frequently Asked Question</h3>
 
     <div className="grid grid-cols-2 gap-4">
-      <div className="question border p-3">"block pb-1
-"block pb-1
-"block pb-1
-"block pb-1
-        <p className="mb-2 text-2xl font-medium"><strong>My Account</strong></p>
+      <div className="question border p-3 rounded-lg border-gray-500">
+        <p className="mb-2 text-2xl font-medium hover:underline hover:cursor-pointer"><strong>My Account</strong></p>
         <Link to="#" className="block pb-1 underline text-sky-800">How do I close account</Link>
         <Link to="#" className="block pb-1 underline text-sky-800">How do I reset my account</Link>
         <Link to="#" className="block pb-1 underline text-sky-800">I can't Sign in to My account</Link>
