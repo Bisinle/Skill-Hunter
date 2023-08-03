@@ -119,6 +119,31 @@
       "experience": 4,
       "skills": "react, js, html,css",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 11,
+      "title": "Techniacal Mentor",
+      "salary": 70000,
+      "location": "Mombasa",
+      "company": "amazon",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "type": "remote",
+      "experience": 5,
+      "skills": "react, js, html,css",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "title": "Techniacl Mentor",
+      "salary": "50000",
+      "location": "Nairobi",
+      "company": "Moringa",
+      "description": "Mentor teachers should review the lesson plans and provide feedback.",
+      "type": "remote",
+      "experience": "+6",
+      "posted": "2023-07-30",
+      "skills": "react, html, js, css",
+      "details": "Mentor teachers should review the lesson plans and provide feedback. Guide the student teacher in the use of specific student assessments and student performance data as appropriate. Explain the methods of assessment and grading you use, and how records are kept and reported to parents.",
+      "id": 12
     }
   ]
 }
