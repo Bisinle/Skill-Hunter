@@ -14,12 +14,22 @@ import Faq from "./help/Faq";
 import ContactUs from "./help/ContactUs";
 
 function RoutingComponent() {
+  const { careerData, PostFormObjectToServer } = useContext(dataContext);
+  console.log(careerData);
   return (
     <Routes>
       <Route index element={<Home />} />
 
       <Route path="about" element={<About />} />
-      <Route path="admin" element={<Admin />} />
+      <Route
+        path="admin"
+        element={
+          <Admin
+            jobs={careerData}
+            PostFormObjectToServer={PostFormObjectToServer}
+          />
+        }
+      />
       <Route path="help" element={<Help />}>
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<ContactUs />} />
