@@ -1,15 +1,18 @@
 import React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { dataContext } from "../data/DataContextProvider";
 import Card from "./Card";
-import { Route, Routes } from "react-router-dom";
 import CareerDetails from "./CareerDetails";
 import Filter from "./Filter";
+import "./home.css"
+import NoResultsCard from "./NoResultsCard";
+import Newsletter from "./Newsletter";
 
 function Home() {
   const { careerData, setCareerData } = useContext(dataContext);
-  const [isDisplayed, setIsDisplayed] = useState(false);
   const [careerId, setCareerId] = useState();
+  const leftSectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
 
    // State to store the selected location from the filter dropdown
   const [selectedLocation, setSelectedLocation] = useState("");
@@ -26,12 +29,6 @@ function Home() {
     setSearchTerm(event.target.value)
   }
 
-  // Houstin's original code, merged with mine in useEffect
-  // Filter the careerData based on the search term
-  // const searchedData = careerData.filter((career) =>
-  //   career.title.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
-
   // Function to update the selected location based on filter dropdown selection
   function handleLocationFilter(filterLocation) {
     setSelectedLocation(filterLocation);
@@ -41,6 +38,8 @@ function Home() {
   // Update the filteredData when careerData, searchTerm, or selectedLocation changes
   
   useEffect(() => {
+    const leftSection = leftSectionRef.current;
+    const rightSection = rightSectionRef.current;
 
     // Filter the careerData based on the search term
     const searchedData = careerData.filter((career) =>
@@ -60,6 +59,15 @@ function Home() {
     // Update the filteredData state with the result; search term, location selected, or both
     setFilteredData (filteredData)
 
+    if (leftSection && rightSection) {
+      leftSection.addEventListener("scroll", handleLeftScroll);
+    }
+
+    return () => {
+      if (leftSection) {
+        leftSection.removeEventListener("scroll", handleLeftScroll);
+      }
+    };
 
   }, [careerData, searchTerm, selectedLocation])
 
@@ -84,32 +92,39 @@ function Home() {
     );
   });
 
+  const handleLeftScroll = () => {
+    const rightSection = rightSectionRef.current;
+    if (rightSection) {
+      rightSection.style.top = `${leftSectionRef.current.scrollTop}px`;
+    }
+  };
+
 
   return (
     <>
-    {/* <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter}/> */}
       <div>
         <div className="grid grid-cols-2 justify-center">
           <div>
             <section className="py-px lg:pb-18 mb-1 bg-gray-100 overflow-hidden">
-              <div className="container px-4 mx-auto">
+            {/* adjustable viewheight */}
+              <div ref={leftSectionRef} style={{ overflowY: "auto", height: "82vh" }} className="container px-4 mx-auto mb-10">
 
                 {/* Search bar and filter dropdown */}
-                <div className="relative flex max-w-3xl mb-5 mt-5 mx-auto">
+                <div className="search-bar relative flex max-w-3xl mb-5 mt-5 mx-auto">
                   <input
                     type="text"
                     id="default-search"
                     value={searchTerm}
                     onChange={handleSearch}
                     placeholder="Search"
-                    className="w-full px-4 py-2.5 pl-10 text-sm text-gray-800 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                    className="w-full px-4 text-gray-800 border border-gray-900 rounded-lg"
                   />
                   <Filter onFilter={handleFilterChange} onLocationFilter={handleLocationFilter} />
                 </div>
 
                 {/* Render the filtered careers */}
                 {displayCareerdata.length === 0 ? (
-                  <p className="text-red-600">No Result Found</p>
+                  <NoResultsCard />
                   ) : (
                     displayCareerdata
                 )}
@@ -118,11 +133,12 @@ function Home() {
             </section>
           </div>
 
-          <div className="max-w-1xl right-20 fixed px-4 py-4 mx-auto ">
+          <div ref={rightSectionRef} style={{ overflowY: "auto"}}  className="max-w-1xl px-4 py-4 mx-auto ">
             <CareerDetails careerData={careerData} careerId={careerId} />
           </div>
         </div>
       </div>
+      <Newsletter />
 
     </>
   );
