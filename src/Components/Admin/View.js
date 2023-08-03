@@ -10,7 +10,7 @@ function View({jobs}) {
         return (
         <>
     
-    <div class="max-w-3xl mx-auto">
+        <div class="max-w-3xl mx-auto">
           <div class="flex flex-wrap ">
             <div class="w-full p-1">
               <a class="block p-6 bg-white hover:bg-opacity-50 transform hover:-translate-y-1 rounded-lg transition duration-500" href="#">
