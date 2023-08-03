@@ -1,9 +1,9 @@
 import React from "react";
 
-function View({ jobs,onDeleteJob }) {
+function View({ jobs,onDeleteJob,deleteFromServer }) {
 
   const handleDeleteClick=(jobId)=>{
-    onDeleteJob(jobId)
+    deleteFromServer(jobId)
   }
 
   const displayCareerdata = jobs.map((career) => {

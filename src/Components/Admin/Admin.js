@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import View from "./View";
 import NewJob from "./NewJob";
 
-function Admin({ jobs, PostFormObjectToServer }) {
+function Admin({ jobs, PostFormObjectToServer,deleteFromServer }) {
   const [adminJobs, setAdminJobs] = useState([]);
   const [show, setShow] = useState(false);
 
@@ -10,18 +10,6 @@ function Admin({ jobs, PostFormObjectToServer }) {
     setAdminJobs(jobs);
   }, []);
 
- const handleDeleteJob=(jobId)=>{
-  fetch(`https://skill-hunter-server.onrender.com/careers/${jobId}`,{
-    method:"DELETE",
-  })
-  .then((res)=>res.json())
-  .then(()=>{
-    setAdminJobs((prevJobs)=>prevJobs.filter((job)=>job.id !==jobId))
-  })
-  .catch((error)=>{
-    console.error("Error deleting job:",error)
-  })
- }
 
 
   const btnText = show ? "Close Form" : "Post Job";
@@ -29,7 +17,7 @@ function Admin({ jobs, PostFormObjectToServer }) {
     <div className="grid grid-cols-2 justify-center admin">
       <div>
         {" "}
-        <View jobs={adminJobs} onDeleteJob={handleDeleteJob} />
+        <View jobs={jobs} deleteFromServer={deleteFromServer} />
       </div>
       <div>
         <button id="fortmButton" onClick={() => setShow(!show)}>
