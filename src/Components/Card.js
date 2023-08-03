@@ -14,13 +14,16 @@ function Card({ career, onButtonClick }) {
             className="block p-6 bg-white hover:bg-opacity-50 transform hover:-translate-y-1 rounded-lg transition duration-500"
             href="#"
           >
-            <div className="flex flex-wrap items-center justify-between -m-2" onClick={() => detailsHandle(career.id)}>
+            <div
+              className="flex flex-wrap items-center justify-between -m-2"
+              onClick={() => detailsHandle(career.id)}
+            >
               <div className="w-auto p-2">
                 <h3 className="mb-1 font-semibold tracking-tight">
                   {career.title}
                 </h3>
                 <p className="text-lg">{career.company}</p>
-                <p className="text-lg">{career.location}</p>
+                <p className="text-lg mb-2">{career.location}</p>
 
                 <div className="mt-3">
                   <span className="bg-gray-300 mr-3 px-2.5 py-1.5 rounded-lg">
