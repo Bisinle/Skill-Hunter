@@ -6,10 +6,7 @@ import AdminCareerDetails from "./AdminCareerDetails";
 import AdminLoadDetailOnInitialRender from "./AdminLoadDetailOnInitialRender";
 import Styles from "./Admin-Styles/Styles.css";
 
-
-
-function Admin({ jobs, PostFormObjectToServer,deleteFromServer }) {
-
+function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
   const [adminJobs, setAdminJobs] = useState([]);
   const [show, setShow] = useState(false);
   const [showRenderOnLoad, setShowRenderOnLoad] = useState(false);
@@ -23,23 +20,20 @@ function Admin({ jobs, PostFormObjectToServer,deleteFromServer }) {
     setAdminJobs(jobs);
   }, []);
 
-
-
+  console.log(jobs);
   const btnText = show ? "Close Form" : "Post Job";
   return (
     <div className="grid grid-cols-2 justify-center admin">
       <div>
         {" "}
-
         <View
           jobs={jobs}
           onClickDetails={sendSatateToCareerDetails}
           setIsStatic={setIsStatic}
           setShowRenderOnLoad={setShowRenderOnLoad}
           showRenderOnLoad={showRenderOnLoad}
-  deleteFromServer={deleteFromServer}
+          deleteFromServer={deleteFromServer}
         />
-
       </div>
       <div>
         <button
