@@ -10,12 +10,26 @@ function Admin({ jobs, PostFormObjectToServer }) {
     setAdminJobs(jobs);
   }, []);
 
+ const handleDeleteJob=(jobId)=>{
+  fetch(`https://skill-hunter-server.onrender.com/careers/${jobId}`,{
+    method:"DELETE",
+  })
+  .then((res)=>res.json())
+  .then(()=>{
+    setAdminJobs((prevJobs)=>prevJobs.filter((job)=>job.id !==jobId))
+  })
+  .catch((error)=>{
+    console.error("Error deleting job:",error)
+  })
+ }
+
+
   const btnText = show ? "Close Form" : "Post Job";
   return (
     <div className="grid grid-cols-2 justify-center admin">
       <div>
         {" "}
-        <View jobs={jobs} />
+        <View jobs={adminJobs} onDeleteJob={handleDeleteJob} />
       </div>
       <div>
         <button id="fortmButton" onClick={() => setShow(!show)}>
