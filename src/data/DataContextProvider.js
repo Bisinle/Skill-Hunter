@@ -32,7 +32,7 @@ function DataContextProvider({ children }) {
   function PostFormObjectToServer(newFormObject) {
     console.log(newFormObject);
     setNewlyPosted(!newlyPosted);
-    fetch(` https://skill-hunter-server.onrender.com/Applicants`, {
+    fetch(` https://skill-hunter-server.onrender.com/careers`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,6 +71,15 @@ function DataContextProvider({ children }) {
       .finally(setIsDeleted(true));
   }
 
+  function deleteFromApllicantsServer(deleteId) {
+    console.log(deleteId);
+
+    fetch(`https://skill-hunter-server.onrender.com/Applicants/${deleteId}`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    });
+  }
+
   const values = {
     careerData,
     setCareerData,
@@ -81,6 +90,7 @@ function DataContextProvider({ children }) {
     setFaqData,
     applicantsData,
     postToApplicantServer,
+    deleteFromApllicantsServer,
   };
   return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
 }

@@ -1,9 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import { dataContext } from "../../data/DataContextProvider";
 
 function Applicant({ id, name, email, CV, onDeleteTransaction }) {
+  const { deleteFromApllicantsServer } = useContext(dataContext);
   function deleteHandler(id) {
     // console.log(id);
     onDeleteTransaction(id);
+    deleteFromApllicantsServer(id);
   }
   return (
     <>
