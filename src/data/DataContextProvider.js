@@ -22,7 +22,7 @@ function DataContextProvider({ children }) {
       .then((data) => setFaqData(data))
       .finally(setIsLoading(false));
 
-    fetch(`https://skill-hunter-server.onrender.com/`)
+    fetch(`https://skill-hunter-server.onrender.com/Applicants`)
       .then((res) => res.json())
       .then((data) => setApplicantsData(data));
   }, [newlyPosted, isDeleted]);
