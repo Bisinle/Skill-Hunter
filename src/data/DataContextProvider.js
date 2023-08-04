@@ -44,7 +44,7 @@ function DataContextProvider({ children }) {
       })
       .then(res=>res.json())
       .then((data)=>{
-      
+      setIsDeleted(data)
       })
      .finally(setIsDeleted(true))
     

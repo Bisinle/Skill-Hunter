@@ -1,6 +1,6 @@
 import React from "react";
 
-function View({ jobs,onDeleteJob,deleteFromServer }) {
+function View({ jobs,deleteFromServer }) {
 
   const handleDeleteClick=(jobId)=>{
     deleteFromServer(jobId)
