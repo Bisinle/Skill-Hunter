@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { useContext } from "react";
+import { dataContext } from "../../data/DataContextProvider";
 
 function View({
   jobs,
@@ -8,12 +10,17 @@ function View({
   setShowRenderOnLoad,
 }) {
   const { careerDetails, setCareerDetail } = onClickDetails;
+  const { deleteFromServer } = useContext(dataContext);
 
   function handleDetails(career) {
     console.log(career);
     setCareerDetail(career);
     setIsStatic(false);
     setShowRenderOnLoad(!showRenderOnLoad);
+  }
+
+  function handelDelete(id) {
+    deleteFromServer(id);
   }
 
   const displayCareerdata = jobs.map((career) => {
@@ -61,15 +68,11 @@ function View({
                     >
                       Check Details
                     </button>
-                    <button
-                      class="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-green-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
-                      href="#"
-                    >
-                      Edit
-                    </button>
+
                     <button
                       class="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-red-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
                       href="#"
+                      onClick={() => handelDelete(career.id)}
                     >
                       Delete
                     </button>

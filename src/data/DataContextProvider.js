@@ -9,6 +9,7 @@ function DataContextProvider({ children }) {
   const [newlyPosted, setNewlyPosted] = useState(false);
   const [applicantsData, setApplicantsData] = useState();
   const [isDeleted, setIsDeleted] = useState([]);
+  const [fetchAfterDelete, setFetchAfterDelete] = useState([]);
   // const [postToApplicantServer, setPostToApplicantServer] = useState({});
 
   useEffect(() => {
@@ -59,12 +60,14 @@ function DataContextProvider({ children }) {
   function deleteFromServer(deleteId) {
     console.log(deleteId);
 
-    fetch(`https://skill-hunter-server.onrender.com/careers${deleteId}`, {
+    fetch(`https://skill-hunter-server.onrender.com/careers/${deleteId}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })
       .then((res) => res.json())
-      .then((data) => {})
+      .then((data) => {
+        setFetchAfterDelete(data);
+      })
       .finally(setIsDeleted(true));
   }
 
