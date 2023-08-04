@@ -31,7 +31,7 @@ function Card({ career, onButtonClick }) {
                   </span>
                   <span className="bg-green-100 mr-3 px-2.5 py-1.5 rounded-lg">
                     {" "}
-                    <i class="fa fa-money-bills"></i> $
+                    <i className="fa fa-money-bills"></i> $
                     {career.salary.toLocaleString()} per year
                   </span>
                   <button
