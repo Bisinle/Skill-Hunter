@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Skill-Hunter/static/css/main.5c1b903b.css",
-    "main.js": "/Skill-Hunter/static/js/main.8f0c103f.js",
+    "main.js": "/Skill-Hunter/static/js/main.1ed0859a.js",
     "static/media/img4.png": "/Skill-Hunter/static/media/img4.dda77e4a6c6211f860de.png",
     "static/media/img.png": "/Skill-Hunter/static/media/img.f90d93d3c2abfbdac3f3.png",
     "static/media/img2.png": "/Skill-Hunter/static/media/img2.c623d34fac6c8c77b082.png",
     "index.html": "/Skill-Hunter/index.html",
     "main.5c1b903b.css.map": "/Skill-Hunter/static/css/main.5c1b903b.css.map",
-    "main.8f0c103f.js.map": "/Skill-Hunter/static/js/main.8f0c103f.js.map"
+    "main.1ed0859a.js.map": "/Skill-Hunter/static/js/main.1ed0859a.js.map"
   },
   "entrypoints": [
     "static/css/main.5c1b903b.css",
-    "static/js/main.8f0c103f.js"
+    "static/js/main.1ed0859a.js"
   ]
 }
