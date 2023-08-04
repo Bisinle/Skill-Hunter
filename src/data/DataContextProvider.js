@@ -22,7 +22,7 @@ function DataContextProvider({ children }) {
       .then((data) => setFaqData(data))
       .finally(setIsLoading(false));
 
-    fetch(` http://localhost:4000/Applicants`)
+    fetch(`https://skill-hunter-server.onrender.com/`)
       .then((res) => res.json())
       .then((data) => setApplicantsData(data));
   }, [newlyPosted, isDeleted]);
@@ -31,7 +31,7 @@ function DataContextProvider({ children }) {
   function PostFormObjectToServer(newFormObject) {
     console.log(newFormObject);
     setNewlyPosted(!newlyPosted);
-    fetch(` https://skill-hunter-server.onrender.com/careers`, {
+    fetch(` https://skill-hunter-server.onrender.com/Applicants`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
