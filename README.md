@@ -1,6 +1,5 @@
 # SKILL HUNTER
 
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 [![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 
@@ -8,7 +7,8 @@
 
 Skill Hunter is a comprehensive web application designed to be your ultimate companion in the job hunting journey. Whether you're a fresh graduate, a seasoned professional, or someone looking for a career change, Skill Hunter is here to empower and guide you towards landing your dream job.
 
-![homepage](public/droid-home.png)
+<li>home page</li>
+<img src="./public/images/Screenshot from 2023-08-04 02-33-27.png">
 
 ## Dependencies
 
@@ -130,13 +130,14 @@ The app will open on your default browser automatically when `npm start` is run,
 
   - Easily search and filter job listings from various industries and locations. Find opportunities that match your skills and interests.
 
-  ![filter](public/filter-bots.png)
+<img src="./public/images/Screenshot from 2023-08-04 03-25-12.png
+">
 
 - View Job Details:
 
   - Get in-depth information about each job listing, including company details, job description, required qualifications, and more.
 
-  ![filter](public/filter-bots.png)
+<img src="./public/images/Screenshot from 2023-08-04 02-33-27.png">
 
 - An Admin Profile:
 
@@ -146,13 +147,14 @@ The app will open on your default browser automatically when `npm start` is run,
 
   - Applications for these jobs are received and admins can toggle view between the form and the applications.
 
-  ![filter](public/filter-bots.png)
+<img src="./public/images/Screenshot from 2023-08-04 02-40-55.png">
 
 - Admin Profile Applications Table
 
   - View the list of applications made by the users on this interactive table that also allows deleting of records.
+    <img src="./public/images/Screenshot from 2023-08-04 02-37-31.png">
 
-  ![filter](public/filter-bots.png)
+/home/bisinle/Desktop/source/Development/code/phase2/Skill-Hunter/
 
 ## Acknowledgements
 
