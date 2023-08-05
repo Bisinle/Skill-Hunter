@@ -3,11 +3,6 @@ import { useState } from "react";
 import Careers from "../Careers";
 function AdminCareerDetails({ careerDetails, isStatic }) {
   const [isShowMore, setIsShowMore] = useState(false);
-  //date
-  //type
-  //title
-  //location
-  //company
 
   const toggleReadMoreLess = ({ careerDetailss }) => {
     console.log(careerDetailss);

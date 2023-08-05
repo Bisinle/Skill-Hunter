@@ -8,6 +8,7 @@ function View({
   setIsStatic,
   showRenderOnLoad,
   setShowRenderOnLoad,
+  setShowTable,
 }) {
   const { careerDetails, setCareerDetail } = onClickDetails;
   const { deleteFromServer } = useContext(dataContext);
@@ -17,6 +18,7 @@ function View({
     setCareerDetail(career);
     setIsStatic(false);
     setShowRenderOnLoad(true);
+    setShowTable(false);
   }
 
   function handelDelete(id) {

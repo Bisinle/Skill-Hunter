@@ -41,6 +41,7 @@ function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
           setShowRenderOnLoad={setShowRenderOnLoad}
           showRenderOnLoad={showRenderOnLoad}
           deleteFromServer={deleteFromServer}
+          setShowTable={setShowTable}
         />
       </div>
       <div>
