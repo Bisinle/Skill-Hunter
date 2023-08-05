@@ -1,3 +1,28 @@
+#admin-jobs {
+  background-color: whitesmoke;
+  overflow: scroll;
+  height: 82vh;
+  display: flex;
+  flex-direction: row;
+
+  padding: 20px;
+}
+#admin-job-cards {
+  margin: 20px;
+  box-shadow: 0px 0px 10px 3px rgb(243, 240, 240);
+}
+#admin-jobs-card-body {
+}
+#admin-jobs-card-btn-outer-div {
+  width: 100%;
+}
+#admin-jobs-card-btn-inner-div {
+  display: flex;
+  justify-content: space-around;
+}
+#admin-jobs-card-btn button {
+  width: 150px;
+}
 #fortmButton,
 #table-link {
   color: white;
