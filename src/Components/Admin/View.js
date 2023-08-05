@@ -37,6 +37,11 @@ function View({
                 id="admin-jobs-card-body"
               >
                 <div className="w-auto p-2">
+                  <i
+                    class="fa-regular fa-trash-can delete"
+                    href="#"
+                    onClick={() => handelDelete(career.id)}
+                  ></i>
                   <h3 className="mb-1 font-semibold tracking-tight">
                     {career.title}
                   </h3>
@@ -73,14 +78,6 @@ function View({
                       href="#"
                     >
                       Check Details
-                    </button>
-
-                    <button
-                      className="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-red-500 hover:bg-red-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
-                      href="#"
-                      onClick={() => handelDelete(career.id)}
-                    >
-                      Delete
                     </button>
                   </div>
                 </div>
