@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.dec78719.css",
-    "main.js": "/static/js/main.0a4f7f60.js",
-    "static/media/img4.png": "/static/media/img4.dda77e4a6c6211f860de.png",
-    "static/media/img.png": "/static/media/img.f90d93d3c2abfbdac3f3.png",
-    "static/media/img2.png": "/static/media/img2.c623d34fac6c8c77b082.png",
-    "index.html": "/index.html",
-    "main.dec78719.css.map": "/static/css/main.dec78719.css.map",
-    "main.0a4f7f60.js.map": "/static/js/main.0a4f7f60.js.map"
+    "main.css": "/Skill-Hunter/static/css/main.dec78719.css",
+    "main.js": "/Skill-Hunter/static/js/main.7cb02c88.js",
+    "static/media/img4.png": "/Skill-Hunter/static/media/img4.dda77e4a6c6211f860de.png",
+    "static/media/img.png": "/Skill-Hunter/static/media/img.f90d93d3c2abfbdac3f3.png",
+    "static/media/img2.png": "/Skill-Hunter/static/media/img2.c623d34fac6c8c77b082.png",
+    "index.html": "/Skill-Hunter/index.html",
+    "main.dec78719.css.map": "/Skill-Hunter/static/css/main.dec78719.css.map",
+    "main.7cb02c88.js.map": "/Skill-Hunter/static/js/main.7cb02c88.js.map"
   },
   "entrypoints": [
     "static/css/main.dec78719.css",
-    "static/js/main.0a4f7f60.js"
+    "static/js/main.7cb02c88.js"
   ]
 }
