@@ -16,7 +16,7 @@ function View({
     console.log(career);
     setCareerDetail(career);
     setIsStatic(false);
-    setShowRenderOnLoad(!showRenderOnLoad);
+    setShowRenderOnLoad(true);
   }
 
   function handelDelete(id) {
