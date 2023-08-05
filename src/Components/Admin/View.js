@@ -76,7 +76,7 @@ function View({
                     </button>
 
                     <button
-                      className="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-red-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
+                      className="inline-block mt-2 w-40 px-4 py-2 text-white font-semibold tracking-tight bg-red-500 hover:bg-red-600 rounded-lg focus:ring-4 focus:ring-indigo-300 transition duration-200"
                       href="#"
                       onClick={() => handelDelete(career.id)}
                     >
