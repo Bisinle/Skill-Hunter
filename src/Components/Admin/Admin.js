@@ -25,6 +25,7 @@ function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
 
   function tableHandle() {
     setShowTable(!showTable);
+    setShow(false);
   }
 
   console.log(jobs);
@@ -47,6 +48,7 @@ function Admin({ jobs, PostFormObjectToServer, deleteFromServer }) {
           id="fortmButton"
           onClick={() => {
             setShow(!show);
+            setShowTable(false);
           }}
         >
           {btnText}
