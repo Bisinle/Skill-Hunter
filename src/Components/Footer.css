@@ -6,11 +6,10 @@
   color: #fff;
   padding: 20px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
 .container {
+  /* background-color: coral; */
   display: flex;
   flex-wrap: wrap;
   padding-top: 2em;
@@ -24,10 +23,6 @@
   margin-top: auto;
   min-height: 20vh;
   /* flex-grow: 1; */
-}
-.main-container {
-  flex: 1; /* Occupy remaining available space */
-  position: absolute;
 }
 
 /* Column styles */
